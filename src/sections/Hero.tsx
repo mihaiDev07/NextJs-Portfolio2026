@@ -7,6 +7,7 @@ import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import HeroOrbit from "@/components/HeroOrbit";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -138,22 +139,22 @@ export const HeroSection = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-            <button
-              onClick={() => console.log("Clicked  1")}
-              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer"
+            <Link
+              href="/#projects"
+              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
             >
               <span className="font-semibold">Explore my work</span>
               <ArrowDown className="size-4" />
-            </button>
-            <button
-              onClick={() => console.log("Clicked 2")}
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2
              border-x-white bg-white text-gray-900 h-12 
-             px-6 rounded-xl cursor-pointer "
+             px-6 rounded-xl transition hover:bg-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
             >
               <span>👋</span>
               <span>Let&apos;s connect</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

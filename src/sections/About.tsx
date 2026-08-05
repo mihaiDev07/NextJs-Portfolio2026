@@ -2,7 +2,7 @@ import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
 import CardHeader from "@/components/CardHeader";
 import ToolboxItems from "@/components/ToolboxItems";
-import bookImage from "@/assets/images/book-cover.png";
+import moviePoster from "@/assets/images/movie-poster.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
@@ -39,6 +39,15 @@ const toolboxItems = [
     title: "Next.JS",
     iconType: NextJSIcon,
   },
+];
+
+const favoriteMovies = [
+  { title: "The Godfather", href: "https://www.imdb.com/title/tt0068646/" },
+  { title: "Shutter Island", href: "https://www.imdb.com/title/tt1130884/" },
+  { title: "The Dark Knight", href: "https://www.imdb.com/title/tt0468569/" },
+  { title: "On the Waterfront", href: "https://www.imdb.com/title/tt0047296/" },
+  { title: "A Streetcar Named Desire", href: "https://www.imdb.com/title/tt0044081/" },
+  { title: "Scent of a Woman", href: "https://www.imdb.com/title/tt0105323/" },
 ];
 
 const hobbies = [
@@ -88,7 +97,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20 lg:py-28">
+    <div id="about" className="py-20 lg:py-28 scroll-mt-20">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -98,12 +107,35 @@ export const AboutSection = () => {
         <div className="mt-20 flex flex-col gap-8 ">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 ">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title="My Reads"
-                description="Explore the books that have shaped my perspective."
+              <Image
+                src={moviePoster}
+                alt=""
+                fill
+                aria-hidden="true"
+                className="-z-10 object-cover opacity-20"
               />
-              <div className="w-40 mx-auto mt-2 md:mt-0 ">
-                <Image src={bookImage} alt="Book Cover" />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-b from-gray-800 via-gray-800/95 to-gray-900/70" />
+              <CardHeader
+                title="Movie Nights"
+                description="A few movies I can watch again and again."
+                className="pb-4 md:pb-4"
+              />
+              <div className="relative z-10 grid grid-cols-2 gap-2 px-6 pb-6 md:px-10">
+                {favoriteMovies.map((movie) => (
+                  <a
+                    key={movie.href}
+                    href={movie.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`View ${movie.title} on IMDb`}
+                    className="group flex min-w-0 items-center justify-between gap-1 rounded-lg border border-white/10 bg-gray-950/60 px-3 py-2 text-xs text-white/80 backdrop-blur transition hover:border-emerald-300/60 hover:bg-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+                  >
+                    <span className="truncate">{movie.title}</span>
+                    <span aria-hidden="true" className="shrink-0 text-emerald-300 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                      ↗
+                    </span>
+                  </a>
+                ))}
               </div>
             </Card>
             <Card className="h-[320px]  md:col-span-3 lg:col-span-2">
@@ -112,12 +144,7 @@ export const AboutSection = () => {
                 description="Explore the technologies and tools i use to craft exceptional digital experiences."
                 className=""
               />
-              <ToolboxItems items={toolboxItems} className="" />
-              <ToolboxItems
-                items={toolboxItems}
-                className="mt-6"
-                itemsWrapperClassName=" -translate-x-1/2"
-              />
+              <ToolboxItems items={toolboxItems} className="mt-8" />
             </Card>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
