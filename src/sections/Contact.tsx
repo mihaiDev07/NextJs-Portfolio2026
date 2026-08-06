@@ -1,6 +1,6 @@
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
 import grainImage from "@assets/images/grain.jpg";
-import Link from "next/link";
+import ActionLink from "@/components/ActionLink";
 
 export const ContactSection = () => {
   return (
@@ -14,7 +14,7 @@ export const ContactSection = () => {
         "
         >
           <div
-            className="absolute inset-0 opacity-15 -z-10"
+            className="pointer-events-none absolute inset-0 -z-10 opacity-15"
             style={{ backgroundImage: `url(${grainImage.src})` }}
           ></div>
 
@@ -28,17 +28,18 @@ export const ContactSection = () => {
                 Ready to bring your ideas to life? Get in touch with me today!
               </p>
             </div>
-            <div>
-              <Link
+            <div className="relative z-20">
+              <ActionLink
                 href="/contact"
                 className="text-white bg-gray-900 inline-flex
            items-center px-6 h-12 rounded-xl gap-2 w-max
-            border border-gray-900 transition hover:bg-gray-800
+            border border-gray-900 cursor-pointer pointer-events-auto
            "
+                ariaLabel="Open the contact page"
               >
                 <span className="font-semibold">Contact Me</span>
                 <ArrowUpRightIcon className="size-4" />
-              </Link>
+              </ActionLink>
             </div>
           </div>
         </div>

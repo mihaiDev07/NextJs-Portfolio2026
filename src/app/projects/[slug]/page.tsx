@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import Card from "@/components/Card";
+import ActionLink from "@/components/ActionLink";
 import { getProjectBySlug, projects } from "@/data/projects";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -48,7 +49,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
           </div>
-          <a href={project.live} target="_blank" rel="noreferrer" className="h-12 mt-10 px-6 rounded-xl bg-white text-gray-950 font-semibold inline-flex items-center gap-2 hover:bg-white/80 transition">Visit Live Site <ArrowUpRightIcon className="size-4" /></a>
+          <ActionLink href={project.live} ariaLabel={`Visit ${project.title} live site`} className="relative z-20 mt-10 inline-flex h-12 cursor-pointer pointer-events-auto items-center gap-2 rounded-xl bg-white px-6 font-semibold text-gray-950 transition hover:bg-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300">Visit Live Site <ArrowUpRightIcon className="size-4" /></ActionLink>
         </Card>
       </article>
       <Footer />

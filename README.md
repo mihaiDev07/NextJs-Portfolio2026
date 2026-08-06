@@ -1,14 +1,4 @@
-# Frontend Developer Portfolio
-
-## EmailJS contact form setup
-
-1. Create an EmailJS service and email template.
-2. In the template, use these variables: `{{from_name}}`, `{{from_email}}`, `{{subject}}`, `{{message}}`, and `{{reply_to}}`.
-3. Copy `.env.example` to `.env.local`.
-4. Replace the example values with the Service ID, Template ID, and Public Key from the EmailJS dashboard.
-5. Restart the development server after changing environment variables.
-
-The browser needs these identifiers to call EmailJS, so they use the `NEXT_PUBLIC_` prefix. They are not secret credentials. Never add a private EmailJS key or `.env.local` to source control. For production, add the same variables in the hosting provider's environment settings.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 

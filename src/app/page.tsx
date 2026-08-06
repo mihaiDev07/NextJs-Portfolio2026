@@ -3,7 +3,8 @@ import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
 import { AboutSection } from "@/sections/About";
-import { TestimonialsSection } from "@/sections/Testimonials";
+// TestimonialsSection is kept in the project for future reviews.
+// import { TestimonialsSection } from "@/sections/Testimonials";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 
@@ -12,9 +13,9 @@ export default function Home() {
     <div>
       <Header />
       <HeroSection />
-      <ProjectsSection />
+      <ProjectsSection showSeeAll />
       <TapeSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <AboutSection />
       <ContactSection />
       <Footer />

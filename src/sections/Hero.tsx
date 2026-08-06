@@ -141,7 +141,7 @@ export const HeroSection = () => {
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
             <Link
               href="/#projects"
-              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer"
             >
               <span className="font-semibold">Explore my work</span>
               <ArrowDown className="size-4" />
@@ -150,7 +150,7 @@ export const HeroSection = () => {
               href="/contact"
               className="inline-flex items-center gap-2
              border-x-white bg-white text-gray-900 h-12 
-             px-6 rounded-xl transition hover:bg-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+             px-6 rounded-xl cursor-pointer "
             >
               <span>👋</span>
               <span>Let&apos;s connect</span>

@@ -4,9 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
-import { projects } from "@/data/projects";
+import ActionLink from "@/components/ActionLink";
+import { projects, type Project } from "@/data/projects";
 
-export const ProjectsSection = () => {
+type ProjectsSectionProps = {
+  items?: Project[];
+  showSeeAll?: boolean;
+};
+
+export const ProjectsSection = ({
+  items = projects.slice(0, 2),
+  showSeeAll = false,
+}: ProjectsSectionProps) => {
   return (
     <section id="projects" className="pb-16 lg:py-24 scroll-mt-20">
       <div className="container">
@@ -16,8 +25,20 @@ export const ProjectsSection = () => {
           description=" See how i transform concepts into engaging digital experiences"
         />
 
-        <div className="flex flex-col mt-10 gap-20 md:mt-20 ">
-          {projects.map((project) => (
+        {showSeeAll && (
+          <div className="mt-6 flex justify-center">
+            <Link
+              href="/projects"
+              className="relative z-20 inline-flex h-11 cursor-pointer items-center gap-2 rounded-xl border border-white/15 px-5 font-semibold text-white transition hover:border-emerald-300/50 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+            >
+              See All
+              <ArrowUpRightIcon className="size-4" />
+            </Link>
+          </div>
+        )}
+
+        <div className="flex flex-col mt-10 gap-20 md:mt-16">
+          {items.map((project) => (
             <Card
               key={project.title}
               className="px-8 pt-8 pb-0 md:pt-12 md:px-10  
@@ -52,17 +73,10 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.live} target="_blank" rel="noreferrer">
-                    <button
-                      className="bg-white text-gray-950 
-                h-12 w-full rounded-xl font-semibold inline-flex
-                items-center justify-center gap-2 mt-8 md:w-auto md:px-6
-                "
-                    >
-                      <span>Visit Live Site</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
+                  <ActionLink href={project.live} className="relative z-20 mt-8 inline-flex h-12 w-full cursor-pointer pointer-events-auto items-center justify-center gap-2 rounded-xl bg-white font-semibold text-gray-950 transition hover:bg-white/80 md:w-auto md:px-6">
+                    <span>Visit Live Site</span>
+                    <ArrowUpRightIcon className="size-4" />
+                  </ActionLink>
                   <Link
                     href={`/projects/${project.slug}`}
                     className="inline-flex items-center justify-center h-12 mt-3 md:ml-3 px-6 rounded-xl border border-white/15 font-semibold hover:bg-white/10 transition"
