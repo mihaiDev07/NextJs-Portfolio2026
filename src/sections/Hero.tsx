@@ -1,19 +1,20 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import memojimage from '@/assets/images/memoji-computer.png';
-import ArrowDown from '@/assets/icons/arrow-down.svg';
-import grainImage from '@/assets/images/grain.jpg';
-import StarIcon from '@/assets/icons/star.svg';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import HeroOrbit from '@/components/HeroOrbit';
-import Link from 'next/link';
+import Image from "next/image";
+import memojimage from "@/assets/images/memoji-computer.png";
+import ArrowDown from "@/assets/icons/arrow-down.svg";
+import grainImage from "@/assets/images/grain.jpg";
+import StarIcon from "@/assets/icons/star.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import HeroOrbit from "@/components/HeroOrbit";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div className="relative isolate z-0 overflow-x-clip py-32 md:py-48 lg:py-60">
       <div
-        className="absolute inset-0 pointer-events-none
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0
        [mask-image:linear-gradient(to-bottom, transparent, black_10%,black_70%,transparent)]
         [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]
        "
@@ -112,9 +113,9 @@ export const HeroSection = () => {
         {/* Animation circle */}
       </div>
 
-      <div className="container">
-        <div className="flex flex-col items-center z-50">
-          <Image src={memojimage} alt="Memoj" className="size-[100px] " />
+      <div className="container relative z-10">
+        <div className="flex flex-col items-center">
+          <Image src={memojimage} alt="Memoj" className="size-[100px]" />
 
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-large">
             <div className="bg-green-500 size-2.5 rounded-full relative ">

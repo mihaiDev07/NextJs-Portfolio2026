@@ -1,18 +1,18 @@
-import ArrowUpRightIcon from '@assets/icons/arrow-up-right.svg';
-import Link from 'next/link';
+import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
+import Link from "next/link";
 
 const footerLinks = [
   {
-    title: 'Facebook',
-    href: 'https://www.facebook.com/taica.rullz/',
+    title: "Facebook",
+    href: "https://www.facebook.com/taica.rullz/",
   },
   {
-    title: 'Instagram',
-    href: 'https://www.instagram.com/taica.rullz/',
+    title: "Instagram",
+    href: "https://www.instagram.com/taica.rullz/",
   },
   {
-    title: 'GitHub',
-    href: 'https://github.com/mihaiDev07?tab=repositories',
+    title: "GitHub",
+    href: "https://github.com/mihaiDev07?tab=repositories",
   },
 ];
 
@@ -34,9 +34,9 @@ export const Footer = () => {
           <div className="flex items-center gap-2 text-white/40">
             <span>&copy;2026. All rights reserved.</span>
             <span aria-hidden="true">&bull;</span>
-            <p className="inline-flex  items-center gap-1.5 font-semibold text-emerald-300">
-              mihaiDev07
-            </p>
+            <Link href="https://github.com/mihaiDev07" target="_blank" rel="noopener noreferrer" prefetch={false} className="inline-flex cursor-pointer items-center gap-1.5 font-semibold text-white/80 transition hover:text-emerald-300">
+              mihaiDev07 <ArrowUpRightIcon className="size-4" />
+            </Link>
           </div>
           <div>
             <nav className="flex flex-col md:flex-row items-center gap-8">
