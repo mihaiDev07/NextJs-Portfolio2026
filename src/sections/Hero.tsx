@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import memojimage from "@/assets/images/memoji-computer.png";
-import ArrowDown from "@/assets/icons/arrow-down.svg";
-import grainImage from "@/assets/images/grain.jpg";
-import StarIcon from "@/assets/icons/star.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import HeroOrbit from "@/components/HeroOrbit";
-import Link from "next/link";
+import Image from 'next/image';
+import memojimage from '@/assets/images/memoji-computer.png';
+import ArrowDown from '@/assets/icons/arrow-down.svg';
+import grainImage from '@/assets/images/grain.jpg';
+import StarIcon from '@/assets/icons/star.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import HeroOrbit from '@/components/HeroOrbit';
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
@@ -113,8 +113,8 @@ export const HeroSection = () => {
       </div>
 
       <div className="container">
-        <div className="flex flex-col items-center">
-          <Image src={memojimage} alt="Memoj" className="size-[100px]" />
+        <div className="flex flex-col items-center z-50">
+          <Image src={memojimage} alt="Memoj" className="size-[100px] " />
 
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-large">
             <div className="bg-green-500 size-2.5 rounded-full relative ">
