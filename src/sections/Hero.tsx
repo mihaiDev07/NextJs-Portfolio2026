@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import memojimage from "@/assets/images/memoji-computer.png";
-import ArrowDown from "@/assets/icons/arrow-down.svg";
-import grainImage from "@/assets/images/grain.jpg";
-import StarIcon from "@/assets/icons/star.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import HeroOrbit from "@/components/HeroOrbit";
-import Link from "next/link";
+import Image from 'next/image';
+import memojimage from '@/assets/images/memoji-computer.png';
+import ArrowDown from '@/assets/icons/arrow-down.svg';
+import grainImage from '@/assets/images/grain.jpg';
+import StarIcon from '@/assets/icons/star.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import HeroOrbit from '@/components/HeroOrbit';
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
@@ -130,13 +130,12 @@ export const HeroSection = () => {
           </div>
           <div className="max-w-lg mx-auto">
             <h1 className="font-serif text-3xl md:5xl text-center mt-8 tracking-wide">
-              Building Exeptional User Experience
+              Crafting Modern Web Experiences
             </h1>
 
             <p className="mt-4 text-center text-white/60 md:text-lg">
-              I specialize in transforming designs into functional ,
-              high-performance web applications. Let&apos;s discuss your next
-              project
+              I build responsive, user-friendly web applications that combine
+              clean design, reliable performance, and intuitive interactions.
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
